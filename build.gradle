@@ -1,27 +1,28 @@
 buildscript {
     repositories {
-        google()
-        jcenter()
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/public' }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.0.0'
+        classpath 'com.android.tools.build:gradle:7.1.0'
         classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.0'
-        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
+//        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
     }
 }
 
 allprojects {
     repositories {
-        google()
-        jcenter()
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/public' }
     }
 }
 
 ext {
     minSdkVersion = 14
-    compileSdkVersion = 29
+    compileSdkVersion = 30
     targetSdkVersion = compileSdkVersion
 
+    rxbinding = 'com.jakewharton.rxbinding4:rxbinding:4.0.0'
     rxJava = 'io.reactivex.rxjava3:rxjava:3.0.4'
     junit = 'junit:junit:4.13'
     mockito = 'org.mockito:mockito-core:3.3.3'

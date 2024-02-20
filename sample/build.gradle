@@ -3,15 +3,14 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
 
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
+//    compileOptions {
+//        sourceCompatibility JavaVersion.VERSION_1_8
+//        targetCompatibility JavaVersion.VERSION_1_8
+//    }
 
     defaultConfig {
         applicationId "com.tbruyelle.rxpermissions.sample"
-        minSdkVersion 14
-
+        minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
@@ -25,9 +24,9 @@ android {
 dependencies {
     implementation project(':rxpermissions')
 
-    implementation 'com.jakewharton.rxbinding4:rxbinding:4.0.0'
+    implementation rootProject.ext.rxbinding
     implementation rootProject.ext.androidXAppcompat
 
-    testImplementation 'junit:junit:4.13'
+    testImplementation rootProject.ext.junit
     testImplementation rootProject.ext.mockito
 }
